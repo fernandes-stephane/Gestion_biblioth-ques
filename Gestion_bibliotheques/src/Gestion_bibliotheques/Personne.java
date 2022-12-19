@@ -2,7 +2,7 @@ package Gestion_bibliotheques;
 
 public class Personne {
 	private String nom;
-	private String prénom;
+	private String prenom;
 	private String adresse;
 	
 	// Get and Set
@@ -12,11 +12,11 @@ public class Personne {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	public String getPrénom() {
-		return prénom;
+	public String getPrenom() {
+		return prenom;
 	}
-	public void setPrénom(String prénom) {
-		this.prénom = prénom;
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
 	public String getAdresse() {
 		return adresse;
@@ -25,4 +25,12 @@ public class Personne {
 		this.adresse = adresse;
 	}
 	
+	// Constructeurs
+	
+	//CONSTRUCTEUR
+		public Personne (String nom, String prenom, String adresse) {
+			this.nom = nom;
+			this.prenom = prenom;
+			this.adresse = adresse;
+		}
 }
