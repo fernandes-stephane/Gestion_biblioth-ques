@@ -2,8 +2,8 @@
  * 
  */
 /**
- * @author 31010-70-09
+ * @author Vinho
  *
  */
-module Gestion_bibliotheques {
+module Bibliotheque {
 }

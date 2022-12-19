@@ -9,6 +9,7 @@ public class Bibliotheque {
 	// private Item[] tabItem;
 	private LinkedList<Employe> listEmploye;
 	private LinkedList<Item> listItem;
+	private LinkedList<Membre> listMembre;
 	
 	// instancie un tableau vide
 	public static LinkedList<Ville> listVille = new LinkedList<Ville>();;
@@ -51,6 +52,17 @@ public class Bibliotheque {
 		this.listEmploye.add(employe);
 	}
 	
+	public void addItem(Livre livre) { 
+		this.listItem.add(livre);
+	}
+	
+	public void addItem(Disque disque) { 
+		this.listItem.add(disque);
+	}
+	
+	public void addMembre(Membre membre) { 
+		this.listMembre.add(membre);
+	}
 	//  CONSTRUCTEURS
 	public Bibliotheque(Ville ville, int capaciteVisiteur, int capaciteItem ) { //, Employe[] employe, ) {
 		if (!this.listVille.contains(ville)) {
@@ -73,6 +85,7 @@ public class Bibliotheque {
 		
 		this.listItem = new LinkedList<Item>();
 		this.listEmploye = new LinkedList<Employe>();
+		this.listMembre = new LinkedList<Membre>();
 		
 		//Livre monLivre = new Livre("toto", "titi", "tutu", "2020-12-21", "tete");
 //		listItem.add(monLivre);
