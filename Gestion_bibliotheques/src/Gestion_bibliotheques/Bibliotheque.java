@@ -3,8 +3,8 @@ import java.util.*;
 
 public class Bibliotheque {
 	private Ville ville;
-	private int capaciteVisiteurs;
-	private int capaciteItems;
+	private int capaciteVisiteurs; //  A verifiez avec le client.
+	private int capaciteItems; //  A verifiez avec le client.
 	// private Employe[] listEmploye;
 	// private Item[] tabItem;
 	private LinkedList<Employe> listEmploye;
@@ -12,7 +12,7 @@ public class Bibliotheque {
 	private LinkedList<Membre> listMembre;
 	
 	// instancie un tableau vide
-	public static LinkedList<Ville> listVille = new LinkedList<Ville>();;
+	public static LinkedList<Ville> listVille = new LinkedList<Ville>();
 	
 	
 	// Get and Set
@@ -48,30 +48,46 @@ public class Bibliotheque {
 		this.listItem = listItem;
 	}
 	
-	public void addEmploye(Employe employe) { 
-		this.listEmploye.add(employe);
+	public void addEmploye(Employe employe) {
+		// Limite d'insertions dans la liste employé.
+		if (this.listEmploye.size()>=100) {
+			System.out.println("Vous ne pouvez pas inserer plus d'employé");
+		} else {
+			this.listEmploye.add(employe);
+		}	
 	}
 	
-	public void addItem(Livre livre) { 
-		this.listItem.add(livre);
+	public void addItem(Livre livre) {
+		// Limite d'insertions dans la liste Item.
+		if (this.listItem.size()>=this.capaciteItems) {
+			System.out.println("Vous ne pouvez pas inserer plus de Livres");
+		} else {
+			this.listItem.add(livre);
+		}
 	}
 	
-	public void addItem(Disque disque) { 
-		this.listItem.add(disque);
+	public void addItem(Disque disque) {
+		// Limite d'insertions dans la liste Item.
+		if (this.listItem.size()>=this.capaciteItems) {
+			System.out.println("Vous ne pouvez pas inserer plus de Disques");
+		} else {
+			this.listItem.add(disque);
+		}
 	}
 	
-	public void addMembre(Membre membre) { 
+	public void addMembre(Membre membre) {
 		this.listMembre.add(membre);
 	}
+	
 	//  CONSTRUCTEURS
 	public Bibliotheque(Ville ville, int capaciteVisiteur, int capaciteItem ) { //, Employe[] employe, ) {
 		if (!this.listVille.contains(ville)) {
 			this.ville = ville;
 		} else {
 			System.out.println("choisir ue autre ville");
+			// Implémenter un solution pour ville ici.
 		}
-		
-		this.ville =ville;
+		// this.ville =ville;
 		if (capaciteVisiteur>30 && capaciteVisiteur<250 ) {
 			this.capaciteVisiteurs = capaciteVisiteur;
 		} else {

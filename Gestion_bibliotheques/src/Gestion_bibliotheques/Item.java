@@ -23,11 +23,7 @@ public class Item {
 	public Item (String titre, String reference) {
 		this.titre =titre;
 		this.reference = reference;
-		//this.
 	}
-
-
-
 
 	//Méthode
 		public String toString() {
