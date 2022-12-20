@@ -164,7 +164,7 @@ public class Start {
 		
 		/// ESSAII STEPH ///
 		// test ville ne peut posseder que un seul nom
-		Ville bordeaux2 = new Ville("Rouans", "33");
+		Ville bordeaux2 = new Ville("bordeaux", "33");
 		System.out.println("\n!! MA nouvelle ville est ici!! -->"+bordeaux.getNom());
 		System.out.println("\n!! MA nouvelle ville est ici!! -->"+bordeaux2.getNom());
 		

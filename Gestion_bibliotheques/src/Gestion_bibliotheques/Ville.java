@@ -26,17 +26,7 @@ public class Ville {
 	}
 	
 	//Constructeur
-	public Ville(String nom, String departement) {
-		//if (!this.listNomVille.contains(nom)) {
-		//	this.nom = nom;
-		//	this.listNomVille.add(nom);
-		//} else {
-		//	System.out.println("\n EREUR -> choisir ue autre ville");
-		//	Scanner newNom = new Scanner(System.in);
-		//	nom = newNom.nextLine();
-		//	System.out.println(nom);
-		//}
-		
+	public Ville(String nom, String departement) {	
 		while (this.listNomVille.contains(nom)) {
 			System.out.println("\nNOM DE VILLE DEJA EXISTANT: Entrez un autre nom:");
 			Scanner newNom = new Scanner(System.in);
