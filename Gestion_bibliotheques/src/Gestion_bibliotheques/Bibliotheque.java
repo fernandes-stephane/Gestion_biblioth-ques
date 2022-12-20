@@ -2,6 +2,7 @@ package Gestion_bibliotheques;
 import java.util.*;
 
 public class Bibliotheque {
+	private String nom;
 	private Ville ville;
 	private int capaciteVisiteurs; //  A verifiez avec le client.
 	private int capaciteItems; //  A verifiez avec le client.
@@ -48,6 +49,15 @@ public class Bibliotheque {
 		this.listItem = listItem;
 	}
 	
+	public String getNom() {
+		return nom;
+	}
+	
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
+	
 	public void addEmploye(Employe employe) {
 		// Limite d'insertions dans la liste employé.
 		if (this.listEmploye.size()>=100) {
@@ -56,6 +66,7 @@ public class Bibliotheque {
 			this.listEmploye.add(employe);
 		}	
 	}
+	
 	
 	public void addItem(Livre livre) {
 		// Limite d'insertions dans la liste Item.
@@ -80,14 +91,13 @@ public class Bibliotheque {
 	}
 	
 	//  CONSTRUCTEURS
-	public Bibliotheque(Ville ville, int capaciteVisiteur, int capaciteItem ) { //, Employe[] employe, ) {
+	public Bibliotheque(String nom, Ville ville, int capaciteVisiteur, int capaciteItem ) { //, Employe[] employe, ) {
+		this.nom = nom;
 		if (!this.listVille.contains(ville)) {
 			this.ville = ville;
 		} else {
 			System.out.println("choisir ue autre ville");
-			// Implémenter un solution pour ville ici.
 		}
-		// this.ville =ville;
 		if (capaciteVisiteur>30 && capaciteVisiteur<250 ) {
 			this.capaciteVisiteurs = capaciteVisiteur;
 		} else {
@@ -102,7 +112,7 @@ public class Bibliotheque {
 		this.listItem = new LinkedList<Item>();
 		this.listEmploye = new LinkedList<Employe>();
 		this.listMembre = new LinkedList<Membre>();
-		
+		}
 		//Livre monLivre = new Livre("toto", "titi", "tutu", "2020-12-21", "tete");
 //		listItem.add(monLivre);
 		
@@ -124,7 +134,11 @@ public class Bibliotheque {
 		
 	// METHODE
 	
-	
+
+	public String toString() {
+		return "Bibliotheque [nom="+ nom +", ville=" + ville + ", capaciteVisiteurs=" + capaciteVisiteurs + ", capaciteItems="
+				+ capaciteItems + ", listEmploye=" + listEmploye + ", listItem=" + listItem + ", listMembre="
+				+ listMembre + "]";
 	}
 
 	

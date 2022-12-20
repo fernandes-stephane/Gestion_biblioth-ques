@@ -9,9 +9,9 @@ public class Emprunt {
 	// item
 	private Item ItemEmprunt;
 	// membre
-	private Personne membreEmprunt;
+	private String nomMembre;
 	// biblio par liens
-	private Bibliotheque biblioEmprunt;
+	private String nomBiblio;
 	
 	// Get and Set
 	public LocalDate getDateEmprunt() {
@@ -32,33 +32,32 @@ public class Emprunt {
 	public void setItemEmprunt(Item itemEmprunt) {
 		ItemEmprunt = itemEmprunt;
 	}
-	public Personne getMembreEmprunt() {
-		return membreEmprunt;
+	public String getMembreEmprunt() {
+		return nomMembre;
 	}
-	public void setMembreEmprunt(Personne membreEmprunt) {
-		this.membreEmprunt = membreEmprunt;
+	public void setMembreEmprunt(String membreEmprunt) {
+		this.nomMembre = membreEmprunt;
 	}
-	public Bibliotheque getBiblioEmprunt() {
-		return biblioEmprunt;
+	public String getBiblioEmprunt() {
+		return nomBiblio;
 	}
-	public void setBiblioEmprunt(Bibliotheque biblioEmprunt) {
-		this.biblioEmprunt = biblioEmprunt;
+	public void setBiblioEmprunt(String biblioEmprunt) {
+		this.nomBiblio = biblioEmprunt;
 	}
 	
 	// CONSTRUCTEUR
-	public Emprunt(String dateEmprunt, String dateRetour, Item itemEmprunt, Personne membreEmprunt//,
-			//Bibliotheque biblioEmprunt) {
-		) {
+	public Emprunt(String dateEmprunt, String dateRetour, Item itemEmprunt, String nomMembre,
+			String nomBiblio) {
 		this.dateEmprunt = LocalDate.parse(dateEmprunt);
 		this.dateRetour = LocalDate.parse(dateRetour);
 		this.ItemEmprunt = itemEmprunt;
-		this.membreEmprunt = membreEmprunt;
-		//this.biblioEmprunt = biblioEmprunt;
+		this.nomMembre = nomMembre;
+		this.nomBiblio = nomBiblio;
 	}
 	//l'item emprunté, le membre et la bibliothèque concernés.
 	public String toString() {
-		return "Disque [dateEmprunt=" + dateEmprunt + ", dateRetour=" + dateRetour +
-				", ItemEmprunt ="+ItemEmprunt+", membreEmprunt ="+membreEmprunt+"]";
+		return "Disque [date Emprunt=" + dateEmprunt + ", date Retour=" + dateRetour +
+				", Item Emprunté ="+ItemEmprunt+", Membre ="+nomMembre+", Bibliothèque ="+nomBiblio+" ]";
 	}
 	
 

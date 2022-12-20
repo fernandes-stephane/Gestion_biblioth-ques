@@ -18,10 +18,10 @@ public class Start {
 		Ville montpellier =new Ville("montpellier","34");
 		
 		//Bibliothèques
-		Bibliotheque chateauRoux = new Bibliotheque(bordeaux, 10, 200);
-		Bibliotheque griffonDor = new Bibliotheque(lyon, 45,600);
-		Bibliotheque vivreEnsemble = new Bibliotheque(paris, 50, 500);
-		Bibliotheque poudlar = new Bibliotheque(montpellier,200,1000);
+		Bibliotheque chateauRoux = new Bibliotheque("Chateau Roux",bordeaux, 10, 200);
+		Bibliotheque griffonDor = new Bibliotheque("Griffon d'Or", lyon, 45,600);
+		Bibliotheque vivreEnsemble = new Bibliotheque("Vivre Ensemble", paris, 50, 500);
+		Bibliotheque poudlar = new Bibliotheque("Poudlar", montpellier,200,1000);
 		
 		// Poste
 		Poste agent = new Poste("Agent");
@@ -154,28 +154,21 @@ public class Start {
 		griffonDor.addMembre(membre4);
 		
 		
-		
-		/*LinkedList<Employe> mzlist = firstBiblio.getListEmploye();
-		System.out.println(mzlist.size());
-		
-		for (int i = 0; i < mzlist.size(); i++) {
-			System.out.println(mzlist[i]);*/
-		//}
-		
-		/// ESSAII STEPH ///
+	
+	
 		// test ville ne peut posseder que un seul nom
-		Ville bordeaux2 = new Ville("bordeaux", "33");
-		System.out.println("\n!! MA nouvelle ville est ici!! -->"+bordeaux.getNom());
-		System.out.println("\n!! MA nouvelle ville est ici!! -->"+bordeaux2.getNom());
+		Ville bordeaux2 = new Ville("rouen", "33");
+		System.out.println("\n!! MA nouvelle Bibliotheque est à "+bordeaux.getNom());
+		System.out.println("\n!! MA nouvelle Bibliotheque est à "+bordeaux2.getNom());
 		
 		//test limite d'employé par bibliotheques
-		System.out.println("Lle nombre d'employés est :"+chateauRoux.getListEmploye().size());
+		System.out.println("Le nombre d'employés est :"+chateauRoux.getListEmploye().size());
 		Employe employe21 = new Employe("Mauvais", "Steeve", "71 rue des coquelicots", "2017-09-05", "1450", "dev", employePolyvalant);
 		griffonDor.addEmploye(employe21);
-		System.out.println("Lle nombre d'employés est :"+chateauRoux.getListEmploye().size());
+		System.out.println("Le nombre d'employés est :"+chateauRoux.getListEmploye().size());
 		
 		//Test fiche d'empreint
-		Emprunt firstEmprunt = new Emprunt("2022-12-24", "2022-12-26", disque3, membre5);
+		Emprunt firstEmprunt = new Emprunt("2022-12-24", "2022-12-26", disque3, membre5.getNom()+" "+membre5.getPrenom(), chateauRoux.getNom());
 		System.out.println(firstEmprunt);
 		
 		
